@@ -10,7 +10,12 @@ const Cart = () => {
     0
   ).toFixed(2);
 
-  console.log("totalCartAmount", totalCartAmount);
+  const totalCartCount = context.state.cart.reduce(
+    (total, book) => total = total + book.count,
+    0
+  )
+
+  console.log("totalCartCount", totalCartCount);
 
   return (
     <div>
@@ -18,7 +23,7 @@ const Cart = () => {
         <Link style={{ textDecoration: "none" }} to="/">
           Kitap Listesi
         </Link>{" "}
-        <span>Sepetim</span>
+        <span>Sepetim ({totalCartCount})</span>
       </h2>
 
       <h3>Toplam Sepet Tutarı: &#8378;{totalCartAmount}</h3>
