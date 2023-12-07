@@ -1,6 +1,11 @@
 import React from "react";
 import "./styles.css";
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+
+import Products from "./components/Products";
+import Cart from "./components/Cart";
+
+import { data } from "./data";
 
 export default function App() {
   return (
@@ -13,8 +18,11 @@ export default function App() {
         />{" "}
         React Dersleri
       </h1>
-      <Route exact path="/" component={Products} />
-      <Route path="/cart" component={Cart} />
+        <Routes>
+          <Route exact path="/" element={<Products/>} />
+          <Route path="/cart" element={<Cart/>} />
+        </Routes>
     </div>
+    
   );
 }
