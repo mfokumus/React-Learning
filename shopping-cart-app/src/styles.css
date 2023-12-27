@@ -3,10 +3,10 @@
   }
   
   .App > h1 {
-    font-size: 22px;
+    font-size: 25px;
     background: #222;
-    color: white;
-    padding: 3px;
+    color: rgb(0, 191, 255);
+    padding: 10px;
     border-radius: 5px;
     display: flex;
     justify-content: space-evenly;
@@ -18,14 +18,14 @@
   }
   
   .App > div > h2 {
-    font-size: 18px;
+    font-size: 20px;
     display: flex;
     justify-content: space-between;
   }
   
   .book {
     display: flex;
-    padding: 10px;
+    padding: 50px;
     margin: 0 0 10px 0;
     border: 1px solid #ccc;
     transition: all 0.5s;
@@ -36,3 +36,6 @@
     margin: 0 10px 0 0;
   }
   
+  .App > div > productbutton {
+    font-size: large;
+  }

@@ -7,7 +7,7 @@ import Cart from "./components/Cart";
 
 import { data } from "./data";
 
-// ES6 
+// ES6
 // Spread operator ...
 // .find(), .map(), .filter(), .reduce()
 // [1,2,3,4,5].reduce((total, num) => total = total + num, 0(total))
@@ -32,11 +32,11 @@ export default function App() {
         : [...state.cart, { ...book, count: 1 }],
     });
 
-  const removeFromCart = (id) => setState({
-    ...state,
-    cart: state.cart.filter((cartItem) => cartItem.id !== id)
-
-  })
+  const removeFromCart = (id) =>
+    setState({
+      ...state,
+      cart: state.cart.filter((cartItem) => cartItem.id !== id),
+    });
 
   const increase = (id) => {
     setState({
@@ -61,15 +61,17 @@ export default function App() {
   };
 
   return (
-    <BooksContext.Provider value={{ state: state, addToCart, increase, decrease, removeFromCart }}>
+    <BooksContext.Provider
+      value={{ state: state, addToCart, increase, decrease, removeFromCart }}
+    >
       <div className="App">
         <h1>
-          Alışveriş Sepeti Yapımı
+          Alışveriş Sepeti Projesi
           <img
             src="https://avatars3.githubusercontent.com/u/60869810?v=4"
             alt="React Dersleri"
           />{" "}
-          React Dersleri
+          Made by MFOkumus
         </h1>
         <Routes>
           <Route exact path="/" element={<Products />} />

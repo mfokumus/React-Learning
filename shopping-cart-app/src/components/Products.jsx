@@ -26,7 +26,7 @@ const Products = () => {
             <h4>{book.name}</h4>
             <p>Yazar: {book.author}</p>
             <p>Fiyat: &#8378; {book.price}</p>
-            <button onClick={() => context.addToCart(book)}>Sepete Ekle</button>
+            <button className="productbutton" onClick={() => context.addToCart(book)}>Sepete Ekle</button>
           </div>
         </div>
       ))}
