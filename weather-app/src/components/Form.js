@@ -1,24 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Form = () => {
 
     const [city, setCity] = useState("")
-
+    const [data, setData] = useState({}) 
 
     const handleChange = (e) => {
-        setCity(e.target.value)
+        e.preventDefault();
+
     }
-    
+
+    console.log(city)
+
   return (
     <div>
       <h1>Hava Durumu</h1>
-      <form>
+      <form onSubmit={(e) => {handleChange(e)}}>
         <div className="form">
           <input
             className="input-text"
             type="text"
             placeholder="Lutfen bir sehir adi giriniz"
-            onChange={handleChange}
+            onChange={(e) => setCity(e.target.value)}
           />
         </div>
         <div className="btnDiv">
