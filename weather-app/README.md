@@ -32,4 +32,4 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your computer.
 5. Start the application: `npm start`.
 6. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-   ![Weather App](weather-app/hava-durumu-görsel.png)
+   ![Weather App](https://raw.githubusercontent.com/mfokumus/React-Learning/2a3500409047fe3269faa75452c48a2dc994e8cc/weather-app/hava-durumu-g%C3%B6rsel.png)https://raw.githubusercontent.com/mfokumus/React-Learning/2a3500409047fe3269faa75452c48a2dc994e8cc/weather-app/hava-durumu-g%C3%B6rsel.png)
