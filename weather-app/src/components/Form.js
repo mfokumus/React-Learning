@@ -38,7 +38,7 @@ const Form = ({ setData, setState }) => {
         </div>
         <div className="btnDiv">
           <button type="submit" className="btn">
-            Sonuclari Goster
+            Hava Durumunu Göster
           </button>
         </div>
       </form>
