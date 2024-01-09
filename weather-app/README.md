@@ -31,3 +31,5 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your computer.
 4. Install the necessary dependencies: `npm install`.
 5. Start the application: `npm start`.
 6. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+   ![Weather App](weather-app/hava-durumu-görsel.png)
