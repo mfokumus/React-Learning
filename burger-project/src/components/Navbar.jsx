@@ -1,8 +1,11 @@
 import React from 'react'
+import BurgerLogo from "../assets/burgerlogo.png"
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
+    <div className='navbar'>
+      <img src={BurgerLogo} alt="" />
+    </div>
   )
 }
 
