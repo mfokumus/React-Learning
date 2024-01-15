@@ -7,7 +7,9 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="main">
-        <img src={BurgerLogo} alt="" />
+        <Link to={"/"}>
+          <img src={BurgerLogo} alt="" />
+        </Link>
         <div className="mainLink">
           <Link to={"/"}>Anasayfa</Link>
           <Link to={"/menu"}>Menü</Link>
