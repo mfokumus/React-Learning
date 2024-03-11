@@ -1,9 +1,16 @@
-import React from 'react'
+import { Link } from "react-router-dom";
+import "../styles/NavigationBar.css";
 
-const NavigationBar = () => {
+const NavbarigationBar = () => {
   return (
-    <div>NavigationBar</div>
-  )
-}
+    <div className="navbar">
+      <div className="main">
+        <div className="mainLink">
+          <div>Anasayfa</div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default NavigationBar
+export default NavbarigationBar;

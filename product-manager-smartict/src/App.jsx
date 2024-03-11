@@ -1,9 +1,20 @@
-import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import { router } from "./router/router";
+import NavigationBar from "./components/NavigationBar";
+import ProductList from "./components/ProductList";
+import HomePage from "./pages/HomePage";
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+    <div>
+      <NavigationBar/>
+    </div>
+    <div>
+      <ProductList/>
+    </div>
+    </>
+    
+  );
 }
 
 export default App;
