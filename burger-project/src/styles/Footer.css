@@ -1,8 +1,8 @@
 .footer {
     background-color: brown;
     height: 200px;
-    display: flex;
-    flex-direction: column;
+    display:flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding-top: 10px;
