@@ -1,20 +1,29 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
-import HomePage from "./pages/HomePage";
 import AddProductForm from "./components/AddProductForm";
+import { Data } from "../src/data/Data";
+import { createContext, useState } from "react";
+import ProductList from "./components/ProductList";
+
+export const BooksContext = createContext();
 
 function App() {
+  const [state, setState] = useState({
+    bookList: Data,
+    cart: [],
+  });
+
   return (
-    <div>
-      <NavigationBar />
-      <Router>
+    <BooksContext.Provider value={{ state: state }}>
+      <div>
+        <NavigationBar />
         <Routes>
-          <Route path="/" exact element={<HomePage />} />
+          <Route path="/" exact element={<ProductList />} />
           <Route path="/add-product" element={<AddProductForm />} />
         </Routes>
-      </Router>
-    </div>
+      </div>
+    </BooksContext.Provider>
   );
 }
 
