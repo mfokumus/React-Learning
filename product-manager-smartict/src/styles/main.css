@@ -1,3 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500&family=Poppins:wght@300;400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body{
+    font-family: 'Nunito', sans-serif;
+}
+  
+.paginate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px; /* İstenilen mesafeye göre ayarlayabilirsiniz */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999; /* Diğer içeriklerin üzerinde kalması için */
+}
+
+.paginate li{
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgb(159, 159, 159);
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: rgb(206, 13, 13);
+    color: white;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Renk geçişini animasyonla yapmak için */
+}
+
+.paginate li:hover {
+    transform: scale(1.1); /* Büyütme efekti */
+    background-color: rgb(255, 102, 102); /* Hover rengi */
+    color: rgb(255, 255, 255); /* Metin rengi */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Gölge efekti */
+}

@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NavigationBar from "./components/NavigationBar";
+import Navbar from "./components/Navbar";
 import AddProductForm from "./components/AddProductForm";
 import { Data } from "./data/Data";
 import { createContext, useContext, useEffect, useState } from "react";
@@ -40,7 +40,7 @@ function App() {
       value={{ products, setProducts, addProduct, removeProduct }}
     >
       <div>
-        <NavigationBar />
+        <Navbar />
         <Routes>
           <Route path="/" exact element={<ProductList />} />
           <Route path="/add-product" element={<AddProductForm />} />

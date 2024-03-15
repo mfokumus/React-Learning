@@ -1,5 +1,3 @@
-import MeImage from "../assets/me.jpg";
-
 export const Data = [
   {
     id: 1,
