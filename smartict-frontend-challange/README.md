@@ -28,7 +28,7 @@ This project is a Front-End React application developed for SmartICT company.
    - Clicking on the add product button redirects the user to the add product page.
    - After entering the product details, clicking the add product button saves the product information to local storage with a new ID.
 
-5. **Adding Products:**
+5. **Deleting Products:**
    - User can delete products by clicking delete button on the listing table
 
 6. **Functionality:**
