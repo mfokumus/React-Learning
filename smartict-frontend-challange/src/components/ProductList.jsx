@@ -2,6 +2,7 @@ import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { useProducts } from "../App";
 import { ToastContainer, toast } from "react-toastify";
+import { Box, Typography } from "@mui/material";
 
 const ProductList = () => {
   const { products, removeProduct } = useProducts();
@@ -62,8 +63,29 @@ const ProductList = () => {
     },
   ];
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="w-full max-w-4xl">
+    <Box
+      sx={{
+        width: "100%",
+        overflowX: "auto",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: { xs: 2, md: 4 }, // Mobil cihazlarda 2, diğerlerinde 4 iç boşluk
+      }}
+    >
+      <Typography
+        variant="h6"
+        component="h3"
+        sx={{
+          textAlign: "center",
+          mt: { xs: 6, md: 12 }, // Mobil cihazlarda 6, diğerlerinde 12 marjı
+          mb: 5,
+        }}
+      >
+        Product Manager
+      </Typography>
+      <div className="max-w-screen-lg mx-auto">
         <DataGrid
           rows={products}
           columns={columns}
@@ -77,10 +99,11 @@ const ProductList = () => {
           pageSizeOptions={[5]}
           checkboxSelection
           disableRowSelectionOnClick
+          stickyHeader
         />
-        <ToastContainer />
       </div>
-    </div>
+      <ToastContainer />
+    </Box>
   );
 };
 
