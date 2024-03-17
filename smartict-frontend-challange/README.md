@@ -20,7 +20,7 @@ This project is a Front-End React application developed for SmartICT company.
 
 3. **Product Listing:**
    - Products are listed in a table using Material UI library.
-   - Users can search products by name and sort them by price.
+   - Users can search products by name and sort them by price..
    - Pagination is implemented, displaying 5 products per page.
 
 4. **Adding Products:**
