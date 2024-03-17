@@ -27,13 +27,13 @@ This project is a Front-End React application developed for SmartICT company.
    ![ProductList](./src/assets/sorting-filtering.png)
 
 4. **Form Control:**
+   - Clicking on the add product button redirects the user to the add product page.
    - Users will encounter a warning message under the form if they try to submit without filling in the required fields. Additionally, if they try to add a product without filling in any fields, an error message will appear.
 
     ![ProductList](./src/assets/form-control.png)
 
 
 5. **Adding Products:**
-   - Clicking on the add product button redirects the user to the add product page.
    - After entering the product details, clicking the add product button saves the product information to local storage with a new ID.
 
    ![ProductList](./src/assets/add-produt.png)
