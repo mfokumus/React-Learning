@@ -40,9 +40,8 @@ const ProductList = () => {
       renderCell: (params) => {
         const handleDelete = () => {
           if (window.confirm("Bu ürünü silmek istediğinize emin misiniz?")) {
-            // Delete the product
+            // Ürünü silme işlemi
             removeProduct(params.id);
-            console.log("Product deleted!");
             toast.success("Ürün başarıyla silindi!", {
               autoClose: 2000,
             });

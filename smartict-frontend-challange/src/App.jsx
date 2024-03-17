@@ -6,12 +6,11 @@ import { Data } from "./data/Data";
 import { createContext, useContext, useEffect, useState } from "react";
 import ProductList from "./components/ProductList";
 
+//Context yapısı kullanıldı
 export const ProductsContext = createContext();
 export const useProducts = () => useContext(ProductsContext);
 
 function App() {
-  // const [state, setState] = useState(Data);
-
   const [products, setProducts] = useState(() => {
     // Retrieve products from local storage or set to default list
     const localData = localStorage.getItem("products");
@@ -28,13 +27,12 @@ function App() {
   };
 
   const removeProduct = (id) => {
-    // Belirtilen ID'ye sahip ürünü filtreleyeme
+    // Belirtilen ID'ye sahip ürünü filtreleme
     const updatedProducts = products.filter((product) => product.id !== id);
 
-    // Yeni ürün dizisini ayarlayın
+    // Yeni ürün dizisini ayarladık
     setProducts(updatedProducts);
   };
-
   return (
     <ProductsContext.Provider
       value={{ products, setProducts, addProduct, removeProduct }}

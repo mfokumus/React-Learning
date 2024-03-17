@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -24,7 +24,7 @@ const AddProductForm = () => {
       toast.error("Lütfen tüm alanları doldurun.");
       return;
     }
-    // Yeni ürünü ekleme işlemi burada gerçekleştirilebilir
+    // Yeni ürünü ekleme işlemi burada gerçekleştirilir
     const newProduct = {
       id: products.length + 1, // setProducts içinde products.length + 1 kullanın
       name: productName,
@@ -62,9 +62,8 @@ const AddProductForm = () => {
   };
 
   return (
-    <div className="container mx-auto mt-8">
-      <h2 className="flex items-center justify-center text-2xl font-bold mb-4 text-center">Ürün Ekle</h2>
-      <form className="max-w-lg mx-auto">
+    <div className="flex items-center justify-center h-screen">
+      <form className="container max-w-lg mx-auto">
         <div>
           <div className="flex items-center justify-center font-bold text-2xl">
             Ürün Ekle
