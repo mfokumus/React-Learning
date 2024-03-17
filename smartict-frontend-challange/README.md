@@ -13,7 +13,7 @@ This project is a Front-End React application developed for SmartICT company.
 ## Project Description
 1. **Features:**
    - The project consists of a navbar, a product listing table, and an add product button.
-   ![Project Screenshot](screenshot.png)
+   ![Project Screenshot](./src/assets/productlist.png)
    
 2. **Default Data:**
    - Initially, there are 10 default products stored in local storage.
