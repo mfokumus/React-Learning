@@ -1,8 +1,32 @@
-# React + Vite
+# SmartICT Front-End React Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
+This project is a Front-End React application developed for SmartICT company.
 
-Currently, two official plugins are available:
+### Technologies Used:
+- **React-Router-Dom:** Used for routing within the application.
+- **Context API:** Utilized for state management.
+- **Tailwind CSS:** Chosen for styling the application.
+- **Material UI:** Employed for creating visually appealing product listings.
+- **React-Toastify:** Used for pop-up notifications.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Description
+1. **Features:**
+   - The project consists of a navbar, a product listing table, and an add product button.
+   ![Project Screenshot](screenshot.png)
+   
+2. **Default Data:**
+   - Initially, there are 10 default products stored in local storage.
+
+3. **Product Listing:**
+   - Products are listed in a table using Material UI library.
+   - Users can search products by name and sort them by price.
+   - Pagination is implemented, displaying 5 products per page.
+
+4. **Adding Products:**
+   - Clicking on the add product button redirects the user to the add product page.
+   - After entering the product details, clicking the add product button saves the product information to local storage with a new ID.
+
+5. **Functionality:**
+   - The project fulfills most of the required features effectively.
+
