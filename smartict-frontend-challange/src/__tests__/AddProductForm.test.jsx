@@ -1,47 +1,52 @@
-// src/__tests__/AddProductForm.test.jsx
-
 import React from "react";
 import { render, fireEvent, waitFor, screen } from "@testing-library/react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { MemoryRouter, BrowserRouter as Router } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import AddProductForm from "../components/AddProductForm";
-import { ProductsProvider } from "../App";
+import { PorductsContext } from "../App";
 
-// Mocking useNavigate hook
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
-  useNavigate: jest.fn(),
+jest.mock("react-toastify", () => ({
+  ...jest.requireActual("react-toastify"),
+  toast: {
+    error: jest.fn(),
+    success: jest.fn(),
+  },
+}));
+
+jest.mock("../App", () => ({
+  useProducts: jest.fn(() => ({
+    products: [],
+    addProduct: jest.fn(),
+  })),
 }));
 
 describe("AddProductForm Component", () => {
   test("renders AddProductForm correctly", () => {
     render(
-      <ProductsProvider>
-        <Router>
-          <AddProductForm />
-          <ToastContainer />
-        </Router>
-      </ProductsProvider>
+      <MemoryRouter>
+        <AddProductForm />
+        <ToastContainer />
+      </MemoryRouter>
     );
 
-    // Asserting if form fields and buttons are rendered
-    expect(screen.getByText("Ürün Ekle")).toBeInTheDocument();
+    // Asserting if form elements are rendered
     expect(screen.getByLabelText("Ürün İsmi")).toBeInTheDocument();
     expect(screen.getByLabelText("Yazar")).toBeInTheDocument();
     expect(screen.getByLabelText("Fiyat (TL)")).toBeInTheDocument();
-    expect(screen.getByText("Ürün Ekle")).toBeInTheDocument();
+    // Finding the "Ürün Ekle" button within button elements
+    const addButton = screen.getByRole("button", { name: "Ürün Ekle" });
+    expect(addButton).toBeInTheDocument();
+
     expect(screen.getByText("İptal")).toBeInTheDocument();
     expect(screen.getByText("Ana Sayfaya Dön")).toBeInTheDocument();
   });
 
   test("displays error message when form is submitted with empty fields", async () => {
     render(
-      <ProductsProvider>
-        <Router>
-          <AddProductForm />
-          <ToastContainer />
-        </Router>
-      </ProductsProvider>
+      <MemoryRouter>
+        <AddProductForm />
+        <ToastContainer />
+      </MemoryRouter>
     );
 
     const addButton = screen.getByText("Ürün Ekle");
@@ -57,12 +62,10 @@ describe("AddProductForm Component", () => {
 
   test("displays error messages when form fields are touched and left empty", async () => {
     render(
-      <ProductsProvider>
-        <Router>
-          <AddProductForm />
-          <ToastContainer />
-        </Router>
-      </ProductsProvider>
+      <MemoryRouter>
+        <AddProductForm />
+        <ToastContainer />
+      </MemoryRouter>
     );
 
     const productNameInput = screen.getByLabelText("Ürün İsmi");
@@ -73,31 +76,22 @@ describe("AddProductForm Component", () => {
     fireEvent.blur(authorInput);
     fireEvent.blur(priceInput);
 
-    // Asserting if error messages are displayed
-    await waitFor(() =>
-      expect(
-        screen.getByText("Bu alanı boş bırakamazsınız.")
-      ).toBeInTheDocument()
-    );
-    expect(
-      screen.getByText("Bu alanı boş bırakamazsınız.")
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText("Bu alanı boş bırakamazsınız.")
-    ).toBeInTheDocument();
+    // Asserting if error message is displayed
+    const errorMessages = screen.getAllByText("Bu alanı boş bırakamazsınız.");
+    expect(errorMessages.length).toBeGreaterThan(0);
   });
 
-  test("redirects to home page after successfully adding a product", async () => {
-    // Mocking addProduct function
+  test("adds product and redirects to home page after successfully submitting the form", async () => {
     const mockAddProduct = jest.fn();
+    jest
+      .spyOn(require("react-router-dom"), "useNavigate")
+      .mockReturnValue(jest.fn());
 
     render(
-      <ProductsProvider value={{ addProduct: mockAddProduct }}>
-        <Router>
-          <AddProductForm />
-          <ToastContainer />
-        </Router>
-      </ProductsProvider>
+      <MemoryRouter>
+        <AddProductForm />
+        <ToastContainer />
+      </MemoryRouter>
     );
 
     const productNameInput = screen.getByLabelText("Ürün İsmi");

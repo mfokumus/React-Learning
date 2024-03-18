@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 const drawerWidth = 240;
 const navItems = ["Ana Sayfa", "Ürün Ekle"];
 
-function Navbar(props) {
+function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -109,4 +109,4 @@ function Navbar(props) {
   );
 }
 
-export default Navbar;
+export default DrawerAppBar;
