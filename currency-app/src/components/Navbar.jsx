@@ -3,7 +3,9 @@ import "../stlye/Navbar.css"
 
 const Navbar = () => {
   return (
-    <div className='nav-currency'>Currency Change Application</div>
+    <div className='header'>
+        <div className='title'>Currency Change Application</div>
+    </div>
   )
 }
 
