@@ -3,7 +3,6 @@ import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import { MemoryRouter, BrowserRouter as Router } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import AddProductForm from "../components/AddProductForm";
-import { PorductsContext } from "../App";
 
 jest.mock("react-toastify", () => ({
   ...jest.requireActual("react-toastify"),
@@ -33,6 +32,7 @@ describe("AddProductForm Component", () => {
     expect(screen.getByLabelText("Ürün İsmi")).toBeInTheDocument();
     expect(screen.getByLabelText("Yazar")).toBeInTheDocument();
     expect(screen.getByLabelText("Fiyat (TL)")).toBeInTheDocument();
+
     // Finding the "Ürün Ekle" button within button elements
     const addButton = screen.getByRole("button", { name: "Ürün Ekle" });
     expect(addButton).toBeInTheDocument();
@@ -49,13 +49,10 @@ describe("AddProductForm Component", () => {
       </MemoryRouter>
     );
 
-    const addButton = screen.getByText("Ürün Ekle");
-    fireEvent.click(addButton);
-
     // Asserting if error message is displayed
     await waitFor(() =>
       expect(
-        screen.getByText("Lütfen tüm alanları doldurun.")
+        screen.findByText("Lütfen tüm alanları doldurun.")
       ).toBeInTheDocument()
     );
   });
